@@ -62,12 +62,12 @@
 	{
 		global $db, $user_id;
 		$_SESSION['user'] = $user_id;
-		if (isset($_SESSION['user']) && $_SESSION['user'] > 0) {
+		if (isset($_SESSION['user']) && $_SESSION['user'] = 1) {
 		$user = $db->query("SELECT * FROM user WHERE user_id = '$user_id'");
 		$logged_in_user = mysqli_fetch_assoc($user);
 		$user_role = $logged_in_user['user_role'];
 			if ($user_role = 'editor') {
-				return false;
+				return true;
 			}
 		}
 	}

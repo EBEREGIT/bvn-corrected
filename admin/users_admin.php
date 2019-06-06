@@ -3,7 +3,7 @@
 
 	if (isset($_GET['search'])) {
 		$search_user = sanitize($_GET['search_user']);
-		$search_query = $db->query("SELECT * FROM user WHERE full_name LIKE '%search_user%'");
+		$search_query = $db->query("SELECT * FROM user WHERE bvn LIKE '%$search_user%' || full_name LIKE '%$search_user%'");
 	}
 
 	if (isset($_GET['edit'])){
@@ -32,9 +32,9 @@
 			<div class="col-md-4">
 			    <form action="users_admin.php?search" method="GET">
 			    	<div class="input-group" id="search">
-				      <input type="text" class="form-control" name="search_user" value="<?php echo $search_user; ?>" placeholder="Search Users">
+				      <input type="text" class="form-control" name="search_user" value="<?php echo $search_user; ?>" placeholder="Search Users or Verify User BVN">
 				      <span class="input-group-btn">
-				        <button type="submit" class="btn btn-default" name="search" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+				        <button type="submit" class="btn btn-default" name="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 				      </span>
 				    </div>
 			    </form>
@@ -62,8 +62,11 @@
 						<tr>
 							<td><?php echo $i; ?></td>
 							<td>
-								<a href="users_admin.php?delete=<?php echo $search_array['user_id']; ?>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove-sign"></span></a>
-								<a href="users_admin.php?edit=<?php echo $search_array['user_id']; ?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+								<?php if(is_editor()): ?>
+									<a href="users_admin.php?delete=<?php echo $user['user_id']; ?>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove-sign"></span></a>
+								
+									<a href="users_admin.php?edit=<?php echo $user['user_id']; ?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+								<?php endif; ?>
 							</td>
 							<td><?php echo $search_array['full_name']; ?></td>
 							<td><?php echo $search_array['email']; ?></td>
@@ -84,8 +87,9 @@
 							<td>
 								<?php if(is_editor()): ?>
 									<a href="users_admin.php?delete=<?php echo $user['user_id']; ?>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove-sign"></span></a>
+								
+									<a href="users_admin.php?edit=<?php echo $user['user_id']; ?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
 								<?php endif; ?>
-								<a href="users_admin.php?edit=<?php echo $user['user_id']; ?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
 							</td>
 							<td><?php echo $user['full_name']; ?></td>
 							<td><?php echo $user['email']; ?></td>

@@ -37,7 +37,7 @@
 
 									<li><a href="../admin/users_admin.php">All Users</a></li>
 									<li><a href="../admin/register_admin.php">Create User</a></li>
-									<li><a href="../admin/users_admin.php?Frozen">Frozen Users</a></li>
+									<li><a href="../admin/bvn_verify.php">Verify User BVN</a></li>
 								</ul>
 							</li>
 

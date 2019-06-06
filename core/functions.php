@@ -23,6 +23,10 @@
 		$old_password = trim($old_password);
 		$user_role = ((isset($_POST['user_role']))?sanitize($_POST['user_role']):'');
 		$user_role = trim($user_role);
+		$search_user = ((isset($_POST['search_user']))?sanitize($_POST['search_user']):'');
+		$search_user = trim($search_user);
+		$photo = ((isset($_POST['photo']))?sanitize($_POST['photo']):'');
+		$photo = trim($photo);
 		$date = date("Y-m-d H:i:s");
 
 		function random_bvn($len)

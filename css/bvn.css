@@ -153,7 +153,7 @@ footer p{
 	padding-top: 20px;
 }
 
-#login-form input[type=text], input[type=name], input[type=number], input[type=email], input[type=password], select, textarea{
+#login-form input[type=text], input[type=file], input[type=name], input[type=number], input[type=email], input[type=password], select, textarea{
 	width: 100%;
 	padding-top: 10px;
 	border: 0px !important;
@@ -161,7 +161,7 @@ footer p{
     border-bottom: 2px solid #f0f0f0 !important; 
 }
 
-#login-form input[type=text]:focus, input[type=name]:focus, input[type=number]:focus, input[type=email]:focus, input[type=password]:focus, select:focus, textarea:focus{
+#login-form input[type=text]:focus, input[type=file]:focus, input[type=name]:focus, input[type=number]:focus, input[type=email]:focus, input[type=password]:focus, select:focus, textarea:focus{
     border-bottom: 2px solid #000080 !important;
     transition: border-bottom 3s;
 }
@@ -197,9 +197,11 @@ footer p{
     box-shadow: 5px 5px 5px #888888;
 }
 
+#faq h3{
+	color:#000080;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
-

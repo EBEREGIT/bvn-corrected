@@ -3,6 +3,8 @@
 	$db = mysqli_connect('127.0.0.1', 'root', '', 'bvn');
 	
 	session_start();
+
+	define('BASEURL', $_SERVER['DOCUMENT_ROOT'].'/bvn-master');
 	
 	if (mysqli_connect_errno()) {
 		echo "Database connection failed with the following error: ". mysqli_connect_error();

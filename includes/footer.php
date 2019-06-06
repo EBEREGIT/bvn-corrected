@@ -25,6 +25,10 @@
 		    document.getElementById("mySidenav").style.width = "0";
 		    document.getElementById("main").style.marginRight= "0";
 		}
+
+		function print_profile() {
+			window.print();
+		}
 	</script>
 
 </body>

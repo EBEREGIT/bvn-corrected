@@ -55,7 +55,7 @@
 			<input type="password" name="password" id="password" class="" value="<?php echo $password; ?>" placeholder="Password">
 		</div>
 
-		<div class="g-recaptcha" data-sitekey="6LdVTkQUAAAAAOdR2cpEgM3l2OB0oURUtBOjNkLt"></div>
+		<!-- <div class="g-recaptcha" data-sitekey="6LdVTkQUAAAAAOdR2cpEgM3l2OB0oURUtBOjNkLt"></div> -->
 		
 		<div class="form-group " id="buttons">
 			<input type="submit" value="Let Me In" class="btn btn-primary">
